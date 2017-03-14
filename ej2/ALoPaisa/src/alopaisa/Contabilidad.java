@@ -87,7 +87,7 @@ public class Contabilidad {
         System.out.println("Gastos Totales el dia:"+ fa.dia + "/" + fa.mes + "/" + fa.year + " = " + gt);
         System.out.println("Ingresos: ");
         for (int i = 0; i < ingresosinicializados; i++) {
-            if(g[i].f == fa){
+            if(in[i].f == fa){
                 System.out.println("Ingreso: " + in[i].getDescripcion() + " Valor: " + in[i].getValor() + " Fecha: " + in[i].f.dia + "/" + in[i].f.mes + "/" + in[i].f.year);
                 it += in[i].getValor();
             }
@@ -104,6 +104,51 @@ public class Contabilidad {
         
     }
     
+    public void ConsultarMes(Fecha fa){
+        System.out.println("Gastos: ");
+        int gt = 0;
+        int it = 0;
+        
+        for (int i = 0; i < gastosinicializados; i++) {
+            if((g[i].f.mes == fa.mes) && (g[i].f.year == fa.year)){
+                System.out.println("Gasto: " + g[i].getDescripcion() + " Valor: " + g[i].getValor() + " Fecha: " + g[i].f.dia + "/" + g[i].f.mes + "/" + g[i].f.year);
+                 gt += g[i].getValor();
+            }
+        }
+        System.out.println("Gastos Totales el dia:"+ fa.dia + "/" + fa.mes + "/" + fa.year + " = " + gt);
+        System.out.println("Ingresos: ");
+        for (int i = 0; i < ingresosinicializados; i++) {
+            if(in[i].f.mes == fa.mes&& (in[i].f.year == fa.year)){
+                System.out.println("Ingreso: " + in[i].getDescripcion() + " Valor: " + in[i].getValor() + " Fecha: " + in[i].f.dia + "/" + in[i].f.mes + "/" + in[i].f.year);
+                it += in[i].getValor();
+            }
+        }
+        System.out.println("ingresos totales  Totales el mes: " + fa.mes + "/" + fa.year + " = " +it);
+        System.out.println("ganancia neta totales  Totales el mes: " + fa.mes + "/" + fa.year + " = " +(it-gt));
+    }
+    
+    public void ConsultarYear(Fecha fa){
+        System.out.println("Gastos: ");
+        int gt = 0;
+        int it = 0;
+        
+        for (int i = 0; i < gastosinicializados; i++) {
+            if( g[i].f.year == fa.year){
+                System.out.println("Gasto: " + g[i].getDescripcion() + " Valor: " + g[i].getValor() + " Fecha: " + g[i].f.dia + "/" + g[i].f.mes + "/" + g[i].f.year);
+                 gt += g[i].getValor();
+            }
+        }
+        System.out.println("Gastos Totales el dia:"+ fa.dia + "/" + fa.mes + "/" + fa.year + " = " + gt);
+        System.out.println("Ingresos: ");
+        for (int i = 0; i < ingresosinicializados; i++) {
+            if(in[i].f.year == fa.year){
+                System.out.println("Ingreso: " + in[i].getDescripcion() + " Valor: " + in[i].getValor() + " Fecha: " + in[i].f.dia + "/" + in[i].f.mes + "/" + in[i].f.year);
+                it += in[i].getValor();
+            }
+        }
+        System.out.println("ingresos totales  Totales el año: "+ fa.year + " = " +it);
+        System.out.println("ganancia neta totales  Totales el año: " + fa.year + " = " +(it-gt));
+    }
     
     
     

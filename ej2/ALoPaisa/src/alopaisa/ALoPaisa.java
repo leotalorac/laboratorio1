@@ -175,7 +175,10 @@ public class ALoPaisa {
                 break;  
             case 4:
                 System.out.println("Has finalizado dia");
-                System.out.println("deseas conocer el registro de hoy u otro dia? 1: SI 2:NO");
+                System.out.println("1: deseas conocer el registro de hoy u otro dia? ");
+                System.out.println("2: deseas conocer el registro del mes ");
+                System.out.println("3: deseas conocer el registro del año ");
+                System.out.println("4: finalizar dia ");
                 int o6 = sc.nextInt();
                 switch(o6){
                     case 1:
@@ -195,6 +198,22 @@ public class ALoPaisa {
                         
                         break;
                     case 2:
+                        System.out.println("Ingresa el mes y el año");
+                        int m,a;
+                        m = sc.nextInt();
+                        a = sc.nextInt();
+                        Fecha fe3 = new Fecha(0,m,a);
+                        con.ConsultarMes(fe3);
+                        break;
+                    case 3:
+                        System.out.println("Ingresa el año");
+                        int m2,a2;
+                        m2 = sc.nextInt();
+                        a2 = sc.nextInt();
+                        Fecha fe5 = new Fecha(0,m2,a2);
+                        con.ConsultarYear(fe5);
+                        break;
+                    case 4:
                         System.out.println("dia acabado correctamente");
                         f =true;
                         System.out.println("iniciando nuevo dia.............");
